@@ -1,3 +1,7 @@
+CREATE DATABASE procuradors;
+
+USE procuradors;
+
 CREATE TABLE client
 (
 	id_client INT AUTO_INCREMENT,
