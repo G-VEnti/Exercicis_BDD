@@ -27,7 +27,9 @@ CREATE TABLE `animals` (
   `tipus` varchar(20) DEFAULT NULL,
   `rasa` varchar(20) DEFAULT NULL,
   `pes` int DEFAULT NULL,
-  `color` varchar(20) DEFAULT NULL
+  `color` varchar(20) DEFAULT NULL,
+  `id_animals` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id_animals`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -39,6 +41,33 @@ LOCK TABLES `animals` WRITE;
 /*!40000 ALTER TABLE `animals` DISABLE KEYS */;
 /*!40000 ALTER TABLE `animals` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `encanteris`
+--
+
+DROP TABLE IF EXISTS `encanteris`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `encanteris` (
+  `data_encanteri` date DEFAULT NULL,
+  `nom_mag` varchar(20) DEFAULT NULL,
+  `id_encanteri` int NOT NULL AUTO_INCREMENT,
+  `id_animals` int DEFAULT NULL,
+  PRIMARY KEY (`id_encanteri`),
+  KEY `id_animals` (`id_animals`),
+  CONSTRAINT `encanteris_ibfk_1` FOREIGN KEY (`id_animals`) REFERENCES `animals` (`id_animals`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `encanteris`
+--
+
+LOCK TABLES `encanteris` WRITE;
+/*!40000 ALTER TABLE `encanteris` DISABLE KEYS */;
+/*!40000 ALTER TABLE `encanteris` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -49,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-09 14:18:31
+-- Dump completed on 2025-11-09 14:46:27
