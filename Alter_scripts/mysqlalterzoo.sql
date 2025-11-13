@@ -1,0 +1,9 @@
+ALTER TABLE animal
+	DROP CONSTRAINT fk_zoo;
+
+DESCRIBE animal;
+
+ALTER TABLE animal
+	ADD CONSTRAINT fk_zoo FOREIGN KEY (id_zoo) REFERENCES zoo(id_zoo);
+
+DESCRIBE animal;

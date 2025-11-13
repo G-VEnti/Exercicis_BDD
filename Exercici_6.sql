@@ -38,8 +38,8 @@ CREATE TABLE animal
 	id_zoo INT,
 	id_especie INT,
 	PRIMARY KEY (id_animal),
-	FOREIGN KEY (id_zoo) REFERENCES zoo(id_zoo),
-	FOREIGN KEY (id_especie) REFERENCES especie(id_especie)
+	CONSTRAINT fk_zoo FOREIGN KEY (id_zoo) REFERENCES zoo(id_zoo),
+	CONSTRAINT fk_especie FOREIGN KEY (id_especie) REFERENCES especie(id_especie)
 );
 
 
