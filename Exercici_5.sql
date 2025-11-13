@@ -27,7 +27,7 @@ CREATE TABLE assumpte
 	estat BOOL NOT NULL,
 	id_client INT,
 	PRIMARY KEY (id_assumpte),
-	FOREIGN KEY (id_client) REFERENCES client(id_client)
+	CONSTRAINT fk_client FOREIGN KEY (id_client) REFERENCES client(id_client)
 );
 
 

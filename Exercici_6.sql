@@ -10,8 +10,9 @@ CREATE TABLE zoo
 	ciutat VARCHAR(20),
 	pais VARCHAR(20),
 	pressupost DOUBLE,
-	grandaria DOUBLE CHECK (grandaria BETWEEN 1000 AND 1000000),
-	PRIMARY KEY (id_zoo)
+	grandaria DOUBLE,
+	PRIMARY KEY (id_zoo),
+	CONSTRAINT chk_zoo CHECK (grandaria BETWEEN 1000 AND 1000000)
 );
 
 
