@@ -4,6 +4,6 @@ ALTER TABLE animal
 DESCRIBE animal;
 
 ALTER TABLE animal
-	ADD CONSTRAINT fk_zoo FOREIGN KEY (id_zoo) REFERENCES zoo(id_zoo);
+	ADD CONSTRAINT fk_zoo FOREIGN KEY (id_zoo) REFERENCES zoo(id_zoo) ON DELETE CASCADE;
 
 DESCRIBE animal;
