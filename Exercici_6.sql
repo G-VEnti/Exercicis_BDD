@@ -30,7 +30,7 @@ CREATE TABLE animal
 (
 	id_animal INT AUTO_INCREMENT,
 	num_identificacio INT,
-	sexe BOOL,
+	sexe ENUM ('Masculi', 'Femeni'),
 	any_naixement CHAR(4),
 	pais_origen VARCHAR(20),
 	continent VARCHAR(9),
