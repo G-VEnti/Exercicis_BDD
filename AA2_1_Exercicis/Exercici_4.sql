@@ -1,3 +1,7 @@
+CREATE DATABASE treballadors;
+
+USE treballadors;
+
 CREATE TABLE regions
 (
 nom_regio VARCHAR(20),
