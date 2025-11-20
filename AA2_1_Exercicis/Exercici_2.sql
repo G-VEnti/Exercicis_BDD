@@ -1,3 +1,7 @@
+CREATE DATABASE mecanics;
+
+USE mecanics;
+
 CREATE TABLE mecanics
 (
 dni CHAR(9),
