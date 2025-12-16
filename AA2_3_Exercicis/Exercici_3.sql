@@ -33,8 +33,8 @@ SELECT assignatura.nom, COUNT(*) FROM assignatura
 	GROUP BY matriculacio.codi_assignatura;
 
 --Millores sintactiques:
-SELECT assignatura.nom, COUNT(*) AS 'Quantitat alumnes matriculats'
+/*SELECT assignatura.nom, COUNT(*) AS 'Quantitat alumnes matriculats'
 	FROM assignatura AS a
 	JOIN matriculacio AS m
 	ON a.codi = m.codi_assignatura
-	GROUP BY m.codi_assignatura;
+	GROUP BY m.codi_assignatura;*/
