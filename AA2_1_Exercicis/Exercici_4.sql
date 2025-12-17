@@ -35,7 +35,7 @@ id_e CHAR(5),
 dni_e CHAR(9),
 nom VARCHAR(20),
 telefon CHAR(9),
-salari VARCHAR(6),
+salari INT,
 codi_l CHAR(4),
 PRIMARY KEY (id_e),
 FOREIGN KEY (codi_l) REFERENCES localitats(codi_l)

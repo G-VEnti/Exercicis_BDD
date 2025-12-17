@@ -36,7 +36,7 @@ CREATE TABLE portacio
 	id_procurador INT,
 	id_assumpte INT,
 	PRIMARY KEY (id_procurador, id_assumpte),
-	FOREIGN KEY (id_procurador) REFERENCES procurador(id_procurador),
+	CONSTRAINT fk_procurador FOREIGN KEY (id_procurador) REFERENCES procurador(id_procurador),
 	CONSTRAINT fk_assumpte FOREIGN KEY (id_assumpte) REFERENCES assumpte(id_assumpte)
 );
 

@@ -23,3 +23,15 @@ INSERT INTO matriculacio (num_matricula_alumne, codi_assignatura) VALUES ('7777R
 
 SELECT * FROM matriculacio;
 SET autocommit=0;
+
+
+--e)
+UPDATE alumne SET num_matricula='8888GGG'
+    WHERE nom='Ellie Williams';
+
+SELECT * FROM alumne;
+
+
+--f)
+DELETE FROM alumne 
+    WHERE nom='Ellie Williams';
