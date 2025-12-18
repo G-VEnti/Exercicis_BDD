@@ -262,7 +262,7 @@ SELECT dni_client, COUNT(*) FROM comandes
 
 --6. Llista totes les comandes realitzades abans del migdia.
 
-	SELECT * FROM comandes WHERE HOUR(data) < 12;
+SELECT * FROM comandes WHERE HOUR(data) < 12;
 
 
 --7. Llista els ingredients que contenen al·lergògens, mostrant només el nom de l'ingredient amb l’àlias “Ingredients amb al·lergògens”.
@@ -293,11 +293,9 @@ SELECT clients.nom, COUNT(comandes.num_comanda)
 --11. Llista les pizzes que tenen més de tres ingredients, mostrant el nom de la pizza i el número d'ingredients.
 
 SELECT pizzes.nom, COUNT(pizzes_ingredients.id_ingredient)
-	FROM pizzes
-	JOIN pizzes_ingredients
-	ON pizzes.id = pizzes_ingredients.id_pizza
-	GROUP BY pizzes_ingredients
-	HAVING COUNT(pizzes_ingredients.id_ingredient) > 3;
+	FROM pizzes JOIN pizzes_ingredients ON pizzes.id = pizzes_ingredients.id_pizza
+		GROUP BY pizzes_ingredients
+			HAVING COUNT(pizzes_ingredients.id_ingredient) > 3;
 
 
 --12. Extreu la facturació que ha tingut un client específic en tota la seva vida, indicant la base imposable, l'IVA i el total facturat.
