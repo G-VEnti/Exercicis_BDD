@@ -2,6 +2,7 @@ CREATE TABLE categories
 (
     id INT AUTO_INCREMENT,
     nom VARCHAR(20),
+    PRIMARY KEY (id)
 );
 
 
@@ -19,9 +20,10 @@ CREATE TABLE clients
 (
     id INT AUTO_INCREMENT,
     nom VARCHAR(20),
-    cognoms VARCHAR (50),
-    adreça VARCHAR (50),
-    correu VARCHAR (50),
+    cognoms VARCHAR(50),
+    adressa VARCHAR(50),
+    correu VARCHAR(50),
+    PRIMARY KEY (id)
 );
 
 
@@ -31,9 +33,9 @@ CREATE TABLE productes
     nom VARCHAR(20),
     descripcio VARCHAR(100),
     estoc INT,
-    id_proveidor,
+    id_proveidor INT,
     PRIMARY KEY (id),
-    FOREIGN KEY (id_proveidor) REFERENCES proveidors(id)
+    CONSTRAINT fk_id_proveidor FOREIGN KEY (id_proveidor) REFERENCES proveidors(id)
 );
 
 
@@ -53,10 +55,10 @@ CREATE TABLE comandes
     id INT AUTO_INCREMENT,
     data DATE,
     import_total FLOAT,
-    estat ENUM ('Enviada', 'Per enviar')
+    estat ENUM ('Enviada', 'Per enviar'),
     id_client INT,
     PRIMARY KEY (id),
-    FOREIGN KEY (id_client) REFERENCES clients(id)
+    CONSTRAINT fk_id_client_c FOREIGN KEY (id_client) REFERENCES clients(id)
 );
 
 
@@ -65,8 +67,8 @@ CREATE TABLE productes_categories
     id_producte INT,
     id_categoria INT,
     PRIMARY KEY (id_producte, id_categoria),
-    FOREIGN KEY (id_producte) REFERENCES productes(id),
-    FOREIGN KEY (id_categoria) REFERENCES categories(id),
+    CONSTRAINT fk_id_producte_pc FOREIGN KEY (id_producte) REFERENCES productes(id),
+    CONSTRAINT fk_id_categoria FOREIGN KEY (id_categoria) REFERENCES categories(id)
 );
 
 
@@ -75,8 +77,8 @@ CREATE TABLE productes_descomptes
     id_producte INT,
     id_descompte INT,
     PRIMARY KEY (id_producte, id_descompte),
-    FOREIGN KEY (id_producte) REFERENCES productes(id),
-    FOREIGN KEY (id_descompte) REFERENCES descomptes(id),
+    CONSTRAINT fk_id_producte_pd FOREIGN KEY (id_producte) REFERENCES productes(id),
+    CONSTRAINT fk_id_descompte FOREIGN KEY (id_descompte) REFERENCES descomptes(id)
 );
 
 
@@ -86,8 +88,8 @@ CREATE TABLE comandes_productes
     id_producte INT,
     quantitat INT,
     PRIMARY KEY (id_comanda, id_producte),
-    FOREIGN KEY (id_comanda) REFERENCES comandes(id),
-    FOREIGN KEY (id_producte) REFERENCES productes(id),
+    CONSTRAINT fk_id_comanda_cp FOREIGN KEY (id_comanda) REFERENCES comandes(id),
+    CONSTRAINT fk_id_producte_cp FOREIGN KEY (id_producte) REFERENCES productes(id)
 );
 
 
@@ -99,8 +101,8 @@ CREATE TABLE valoracions
     comentari VARCHAR(100),
     data DATE,
     PRIMARY KEY (id_producte, id_client),
-    FOREIGN KEY (id_producte) REFERENCES productes(id),
-    FOREIGN KEY (id_client) REFERENCES clients(id)
+    CONSTRAINT fk_id_producte_v FOREIGN KEY (id_producte) REFERENCES productes(id),
+    CONSTRAINT fk_id_client_v FOREIGN KEY (id_client) REFERENCES clients(id)
 );
 
 

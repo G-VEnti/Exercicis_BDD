@@ -16,9 +16,9 @@ ALTER TABLE categories
 
 --d)
 ALTER TABLE valoracions
-    DROP CONSTRAINT fk_id_client;
+    DROP CONSTRAINT fk_id_client_v;
 
 ALTER TABLE valoracions
-    ADD CONSTRAINT fk_id_client
+    ADD CONSTRAINT fk_id_client_v
         FOREIGN KEY (id_client) REFERENCES clients(id)
             ON DELETE CASCADE;
