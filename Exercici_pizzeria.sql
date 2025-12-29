@@ -307,4 +307,4 @@ SELECT client.nom,
 	FROM clients JOIN comandes
 	ON clients.dni = comandes.dni_client
 	GROUP BY clients.dni
-	WHERE client.dni = "xxxxxxx";
+	HAVING client.dni = "xxxxxxx";

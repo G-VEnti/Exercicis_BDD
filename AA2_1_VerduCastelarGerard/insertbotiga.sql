@@ -37,7 +37,7 @@ INSERT INTO comandes (data, import_total, estat, id_client) VALUES
 ('2024-01-15', 599.99, 'Enviada', 1),
 ('2024-10-20', 89.50, 'Per enviar', 2),
 ('2024-10-10', 450.00, 'Enviada', 3),
-('2024-02-25', 120.75, 'Per enviar', 4),
+('2024-02-25', 120.75, 'Per enviar', 1),
 ('2024-03-05', 299.99, 'Enviada', 5);
 
 INSERT INTO productes_categories (id_producte, id_categoria) VALUES

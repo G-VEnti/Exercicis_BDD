@@ -33,3 +33,10 @@ SELECT clients.nom, COUNT(valoracions.id_producte) FROM clients
         GROUP BY clients.nom;
 
 --9
+SELECT clients.nom, clients.cognoms,
+    SUM(comandes.import_total)*0.79 AS "Base imposable",
+    SUM(comandes.import_total)*0.21 AS "IVA",
+	SUM(comandes.import_total) AS "Total gastat"
+    FROM clients
+        JOIN comandes ON clients.id=comandes.id_client
+            GROUP BY clients.id;
