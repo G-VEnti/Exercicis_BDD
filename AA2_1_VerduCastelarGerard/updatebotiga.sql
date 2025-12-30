@@ -4,3 +4,7 @@ UPDATE productes
 
 DELETE FROM clients
     WHERE id NOT IN (SELECT id_client FROM comandes);
+    
+
+SELECT * FROM productes;
+SELECT * FROM clients;

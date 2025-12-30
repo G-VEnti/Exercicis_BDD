@@ -41,25 +41,25 @@ INSERT INTO comandes (data, import_total, estat, id_client) VALUES
 ('2024-03-05', 299.99, 'Enviada', 5);
 
 INSERT INTO productes_categories (id_producte, id_categoria) VALUES
-(1, 1), -- Telèfon → Electrònica
-(2, 2), -- Samarreta → Roba
-(3, 3), -- Rentadora → Llar
-(4, 1), -- Pilota → Esports
-(5, 5); -- Novel·la → Llibres
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 1),
+(5, 5);
 
 INSERT INTO productes_descomptes (id_producte, id_descompte) VALUES
-(1, 1), -- Telèfon amb descompte 1
-(2, 2), -- Samarreta amb descompte 2
-(3, 3), -- Rentadora amb descompte 3
-(4, 4), -- Pilota amb descompte 4
-(5, 5); -- Llibre amb descompte 5
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
 
 INSERT INTO comandes_productes (id_comanda, id_producte, quantitat) VALUES
-(1, 1, 1),  -- Comanda 1: 1 telèfon
-(2, 2, 3),  -- Comanda 2: 3 samarretes
-(3, 3, 1),  -- Comanda 3: 1 rentadora
-(4, 4, 2),  -- Comanda 4: 2 pilotes
-(5, 5, 5);  -- Comanda 5: 5 llibres
+(1, 1, 1),
+(2, 2, 3),
+(3, 3, 1),
+(4, 4, 2),
+(5, 5, 5);
 
 INSERT INTO valoracions (id_producte, id_client, puntuacio, comentari, data) VALUES
 (1, 1, 4.5, 'Molt bo, pantalla espectacular', '2024-01-20'),
