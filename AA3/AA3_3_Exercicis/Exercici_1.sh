@@ -2,7 +2,7 @@
 mysql -u root -pAlumne.123 -e "SHOW DATABASES" > resultat.txt
 
 # Comprovem si rebem els paràmetres
-if [$# != 5]; then
+if [ $# != 5 ]; then
     echo "[Error] Has escrit $# parametres"
     echo "Ús: ./backupBD.sh usuari password host base_de_dades desti"
     exit 1

@@ -1,3 +1,7 @@
+CREATE DATABASE galaxia;
+
+USE galaxia;
+
 CREATE TABLE planetes (
   id INT PRIMARY KEY AUTO_INCREMENT,
   nom VARCHAR(20)
