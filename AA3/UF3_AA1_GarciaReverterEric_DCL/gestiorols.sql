@@ -15,6 +15,8 @@ SHOW GRANTS FOR 'xenomorf';
 SHOW GRANTS FOR 'metahuma';
 
 -- 9
+GRANT 'metahuma' TO 'clark'@127.0.0.1;
+
 SET DEFAULT ROLE 'metahuma' TO 'clark'@127.0.0.1;
 
 -- Conectat desde clark
